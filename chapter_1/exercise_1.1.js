@@ -47,3 +47,32 @@ console.log(square(5));
 
 // Will first evaluate the expression 2 + 5 and then square it
 console.log(square(2 + 5));
+
+// I can use the same function name multiple times
+console.log(square(square(5)));
+
+// I can use a function as a building block for another function
+function sum_of_squares(x, y) {
+    return square(x) + square(y);
+}
+
+console.log(sum_of_squares(3, 4));
+
+function f(n) {
+    return sum_of_squares(n, n + 1);
+}
+
+console.log(f(3));
+
+// Using conditional expressions
+function abs(x) {
+    return x >= 0 ? x : -x;
+}
+
+function abs_m(x) {
+    return x > 0
+        ? x
+        : x === 0
+        ? 0
+        : -x;
+}
